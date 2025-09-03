@@ -49,7 +49,7 @@ public class Main {
         System.out.println("==== Rincian Parkir ====");
         System.out.println("Jenis Kendaraan \t: " + jenisKendaraan);
         System.out.println("Durasi Parkir \t\t: " + durasiParkir + " Jam");
-        System.out.println("Total Tarif Parkir \t: Rp." + totalTarif);
+        System.out.println("Total Tarif Parkir \t: Rp." + String.format("%,d", totalTarif));
 
     }
 }
