@@ -1,4 +1,6 @@
 import java.util.Scanner;
+import java.text.NumberFormat;
+import java.util.Locale;
 
 public class Main {
     public static void main(String[] args) {
@@ -38,12 +40,14 @@ public class Main {
             gajiSetelahPotongan = gajiKaryawan - potonganGaji;
         }
 
+        NumberFormat rupiahFormat = NumberFormat.getCurrencyInstance(new Locale("id", "ID"));
+
         System.out.println("");
         System.out.println("==== Rincian Absensi Karyawan ====");
         System.out.println("Nama Karyawan \t\t\t: " + namaKaryawan);
         System.out.println("Status Kehadiran \t\t: " + statusKehadiran);
-        System.out.println("Gaji Sebelum Potongan \t: Rp." + gajiKaryawan);
-        System.out.println("Potongan Gaji \t\t\t: Rp." + potonganGaji);
-        System.out.println("Gaji yang Diterima \t\t: Rp." + gajiSetelahPotongan);
+        System.out.println("Gaji Sebelum Potongan \t: Rp." + rupiahFormat.format(gajiKaryawan));
+        System.out.println("Potongan Gaji \t\t\t: Rp." + rupiahFormat.format(potonganGaji));
+        System.out.println("Gaji yang Diterima \t\t: Rp." + rupiahFormat.format(gajiSetelahPotongan));
     }
 }
