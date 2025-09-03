@@ -1,4 +1,6 @@
 import java.util.Scanner;
+import java.text.NumberFormat;
+import java.util.Locale;
 public class Main {
     public static void main(String[] args) {
 
@@ -66,13 +68,15 @@ public class Main {
                 return;
         }
 
+        NumberFormat rupiahFormat = NumberFormat.getCurrencyInstance(new Locale("id", "ID"));
+
         System.out.println("");
         System.out.println("==== Rincian Pembayaran ====");
         System.out.println("Nama Pembeli \t\t: " + namaPembeli);
         System.out.println("Status Membership \t: " + statusMember);
-        System.out.println("Total Belanja \t\t: Rp." + totalBelanja);
+        System.out.println("Total Belanja \t\t: Rp." + rupiahFormat.format(totalBelanja));
         System.out.println("Persentase Diskon \t: " + persentaseDiskon + "%");
-        System.out.println("Nominal Diskon \t\t: Rp." + nominalDiskon);
-        System.out.println("Total Bayar \t\t: Rp." + totalSetelahDiskon);
+        System.out.println("Nominal Diskon \t\t: Rp." + rupiahFormat.format(nominalDiskon));
+        System.out.println("Total Bayar \t\t: Rp." + rupiahFormat.format(totalSetelahDiskon));
     }
 }
