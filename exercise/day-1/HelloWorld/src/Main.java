@@ -36,5 +36,8 @@ public class Main {
         // Tipe Data Array
 //        int[] iniArray = {10,20,30};
 //        System.out.println("This is array : " + iniArray[1]);
+
+
+
     }
 }
